@@ -26,9 +26,10 @@ export default function App(): JSX.Element {
 
   const mapping = { Banner, Content, 'News List': NewsList, 'Simple Content': Content };
   const configuration = useMemo(() => ({
-    endpoint: 'http://localhost:8080/delivery/site/v1/channels/spa-react-csr/pages',
+    endpoint: 'http://localhost:3000/site/resourceapi',
     path: `${location.pathname}${location.search}`,
     httpClient: axios,
+    authorizationHeader: 'HST-Authorization',
     debug: true,
   }), [location]);
 
